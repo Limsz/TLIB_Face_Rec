@@ -58,13 +58,12 @@ open class FaceBoxOverlay(context: Context?, attrs: AttributeSet?) : View(contex
         synchronized(lock) { faceBoxes.add(faceBox) }
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
-        synchronized(lock) {
-            for (graphic in faceBoxes) {
-                graphic.draw(canvas)
-            }
+    class GraphicOverlay(context: Context, attrs: AttributeSet) : View(context, attrs) {
+        override fun onDraw(canvas: Canvas) {
+            super.onDraw(canvas)
+            // Your drawing logic here
         }
     }
+
 
 }
